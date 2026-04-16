@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Georgia", serif;
+  --color-k-yellow: #FFD700;
+  --color-k-red: #CE1126;
+  --color-bg-cream: #FFFDF5;
+  --color-text-dark: #2D2D2D;
+  --color-card-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-k-yellow text-text-dark font-sans h-screen flex items-center justify-center p-4;
+  }
+}
+
+@layer components {
+  .chat-bg-pattern {
+    background-image: radial-gradient(var(--color-k-yellow) 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    background-color: var(--color-bg-cream);
+  }
+
+  .heritage-tag {
+    @apply text-[10px] uppercase tracking-[2px] font-bold text-gray-400 mb-1;
+  }
+
+  .topic-pill {
+    @apply p-3 bg-[#FFF9E5] border border-k-yellow rounded-2xl text-sm font-semibold cursor-pointer flex items-center gap-3 transition-all hover:bg-k-yellow/20;
+  }
+
+  .bubble {
+    @apply max-w-[85%] p-4 rounded-[24px] text-[15px] leading-relaxed shadow-sm;
+  }
+
+  .bubble-ai {
+    @apply bg-k-yellow text-text-dark self-start rounded-bl-none;
+  }
+
+  .bubble-user {
+    @apply bg-k-red text-white self-end rounded-br-none;
+  }
+
+  .input-bar {
+    @apply bg-white px-6 py-3 rounded-full border-2 border-[#F0EDE0] shadow-lg flex items-center gap-4;
+  }
+}
+
+
